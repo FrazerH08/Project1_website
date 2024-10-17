@@ -21,13 +21,13 @@ section{
 }
 </style>';
 
-if($result->num_rows > 0) {
+if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<section class="postCard">';
         echo '<p><a href="retrieve_post.php?id=' . $row['id'] . '">' . $row['title'] . '</a>:<br>';
-        if($role == 'admin'){
-            echo '<a href="edit_post_form.php?id=' . $row['id'] . ' ">Edit</a> | <a href="delete_post.php?id=' .$row['id'] .'">Delete</a>';
-        }
+            if($role == 'admin'){
+                echo '<a href="edit_post_form>php?id=' . $row['id'] . '">Edit</a> | <a onclick="return confirm(\'Do You Really Want To Delete This?\')" href="delete_post.php?id=' . $row['id'] . '">Delete</a>';
+            }
         echo $row['description'] . "</>";
         echo "</section>";
     }
