@@ -13,7 +13,7 @@ $sanitisedPost= htmlentities(string: $post_text);
 
 $sql = "UPDATE posts SET title='$sanitisedTitle', description='$sanitisedDescription', post_txt='$sanitisedPost' WHERE id = $id";
 
-if ($conn->query(query: $sql) === true){
+if ($conn->query(query: $sql) === TRUE) {
     echo "New record created successfully<br>";
     echo "<a href='list_posts.php'>Back to Posts</a>";
 } else{

@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
         echo '<section class="postCard">';
         echo '<p><a href="retrieve_post.php?id=' . $row['id'] . '">' . $row['title'] . '</a>:<br>';
             if($role == 'admin'){
-                echo '<a href="edit_post_form>php?id=' . $row['id'] . '">Edit</a> | <a onclick="return confirm(\'Do You Really Want To Delete This?\')" href="delete_post.php?id=' . $row['id'] . '">Delete</a>';
+                echo '<a href="edit_post_form.php?id=' . $row['id'] . '">Edit</a> | <a onclick="return confirm(\'Do You Really Want To Delete This?\')" href="delete_post.php?id=' . $row['id'] . '">Delete</a>';
             }
         echo $row['description'] . "</>";
         echo "</section>";

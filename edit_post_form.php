@@ -5,7 +5,7 @@
 
     $SQL = "SELECT title, description, post_txt FROM posts WHERE id = $id";
 
-    $result= $conn->query(query: $SQL);
+    $result= $conn->query($SQL);
 
     $row = $result->fetch_assoc();
 
@@ -14,7 +14,7 @@
     }else{
         $title = $row['title'];
         $description = $row['description'];
-        $post_txt = htmlentities(string: $row['post_txt']);
+        $post_txt = htmlentities($row['post_txt']);
     }
 
 ?>
