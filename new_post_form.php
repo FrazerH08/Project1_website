@@ -6,7 +6,7 @@
     <title>Add Post Form</title>
 </head>
 <body>
-    <form action="new_post_validate.php" method="post">
+    <form action="add_post_validate.php" method="post">
     <label for="title">Title: </label><br>
         <input type="text" name="title" id="title" placeholder="New Post Title" size="34">
         <br>
