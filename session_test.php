@@ -9,14 +9,29 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-    This is the login page <br>
-    <a href="home_test.php">This goes to the home page</a> <br>
+    <form action="session_test.php" method="post">
+        username: <br>
+        <input type="text" name="username"> <br> 
+        password: <br>
+        <input type="password" name="password"> <br> 
+        <input type="submit" name="login" value="login"> 
+    </form>
+
 </body>
 </html>
 <?php
-$_SESSION["username"] ="FrazerGTFC";
-$_SESSION["password"] = "Frazer2008";
+if(isset($_POST["login"])){
 
-echo $_SESSION["username"] . "<br>";
-echo $_SESSION["password"] . "<br>";
+    if(!empty($_POST["username"]) && 
+    !empty($_POST["password"])){ 
+
+        $_SESSION["username"] = $_POST["username"];
+        $_SESSION["password"] = $_POST["password"];
+
+        header("Location: home_test.php");
+    }
+    else{
+        echo"Missing username/password <br> ";
+    }
+}
 ?>

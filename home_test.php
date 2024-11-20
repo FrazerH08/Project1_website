@@ -1,7 +1,5 @@
 <?php
-session_start()
-echo $_SESSION["username"] . "<br>";
-echo $_SESSION["password"] . "<br>";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +9,20 @@ echo $_SESSION["password"] . "<br>";
     <title>Document</title>
 </head>
 <body>
-    <h1>This is the home page</h1><br>
-    <a href="session_test.php"
+    This is the home page<br>
+    <form action="home_test.php" method="post">
+    <input type="submit" name="logout"value="logout">
+    </form>
+
 </body>
 </html>
+<?php
+echo $_SESSION["username"] . "<br>";
+echo $_SESSION["password"] . "<br>";
+
+if(isset($_POST["logout"])){
+    session_destroy();
+    header("Location: session_test.php");
+
+}
+?>
