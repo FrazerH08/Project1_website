@@ -43,6 +43,11 @@
             <img src="signup.svg">
             </a>
         </div>
+        <div class="homepage-icon">
+            <a href="index.php">
+            <img src="Home.svg">
+            </a>
+        </div>
 </div>
     <div class="Homepagetitle"> <h1> <u>Homepage</u></h1>
 </body>

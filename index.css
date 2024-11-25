@@ -81,6 +81,13 @@
     
     .signup-icon {
         position: absolute;
-        bottom: 3px;
+        bottom: 0.0000000001px;
         left: 650px;
+    }
+    
+    .homepage-icon {
+        position: absolute;
+        bottom: 1px;
+        left: 775px;
+        right: 100px;
     }
