@@ -1,0 +1,41 @@
+body{
+    background-color: #F8F3F3;
+    font-family: "Inter", sans-serif;
+}
+nav{
+    width: 100%;
+    margin: auto;
+    height: 87px;
+    display: inline-block;
+    background-color: #D9D9D9;
+    border: 1px solid #000;
+}
+
+.icon{
+    text-decoration: none;
+    position: relative;
+    left: 33%;
+}
+
+.icon img{
+    border: #000 thin solid;
+    padding:7px;
+    height:30px;
+    background-color: aqua;
+    margin: 25px;
+
+}
+
+.icon img:hover{
+    border: #000 thin solid;
+    padding:7px;
+    height:30px;
+    background-color:beige;
+
+}
+
+
+.postCard{
+    position: relative;
+    top: 100px;
+}
