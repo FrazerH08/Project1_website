@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     * {
         margin: 0;
         padding: 0;
@@ -91,3 +92,174 @@
         left: 775px;
         right: 100px;
     }
+=======
+body {
+    background-color: #F8F3F3;
+    font-family: "Inter", sans-serif;
+}
+
+.Header{
+
+}
+
+nav{
+    width: 100%;
+    margin: auto;
+    height: 87px;
+    display: inline-block;
+    background-color: #D9D9D9;
+    border: 1px solid #000;
+}
+
+.icon{
+    text-decoration: none;
+    position: relative;
+    left: 33%;
+}
+
+.icon img{
+    border: #000 thin solid;
+    padding:7px;
+    height:30px;
+    background-color: aqua;
+    margin: 25px;
+
+}
+
+.icon img:hover{
+    border: #000 thin solid;
+    padding:7px;
+    height:30px;
+    background-color:beige;
+
+}
+.Homepagetxt{
+    text-align: center;
+    font-size: 22px;
+
+}
+
+.hello-username{
+color: #0F0F0F;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+position: relative;
+bottom: 75px;
+}
+
+
+.cookiesbutton{
+    background-color: aqua;
+    border: 1px solid #000;
+    color: #000;
+    padding: 20px 40px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    left: 1650px;
+    bottom: 180px;
+}
+
+
+.post-homescreen{
+    font-size: 20px;
+
+}
+
+.post-homescreen img{
+    border: 1px solid #000;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    left:92px;
+    bottom: 50px
+
+}
+
+.titles{
+    font-size: 30px;
+    position: relative;
+    left: 235px;
+    bottom: 50px;
+}
+
+.description-txt{
+    position: relative;
+    left: 92px;
+    bottom: 50px;
+}
+.titles2{
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+    bottom: 500px;
+}
+.post-homescreen2 img{
+    border: 1px solid #000;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    bottom: 500px;
+    left: 750px;
+}
+.description-txt2{
+    position: relative;
+    left: 750px;
+    bottom: 500px;
+    font-size: 20px;
+}
+
+
+
+
+.titles3{
+    font-size: 30px;
+    position: relative;
+    bottom: 950px;
+    left: 1560px;
+}
+.post-homescreen3 img{
+    border: 1px solid #000;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    bottom: 958px;
+    left: 1408px;
+}
+.description-txt3{
+    position: relative;
+    left: 1400px;
+    bottom: 958px;
+    font-size: 20px;
+}
+.create_post{
+
+}
+.bookmark_icon{
+
+}
+.delete_profile{
+
+
+}
+.view-profile{
+
+}
+.search-posts {
+
+}
+.login-icon {
+
+}
+.signup-icon {
+
+}
+.homepage-icon {
+
+}
+
+>>>>>>> 2c16e7c (Tuesdays work)
