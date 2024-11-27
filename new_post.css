@@ -1,8 +1,9 @@
-body{
+body {
     background-color: #F8F3F3;
     font-family: "Inter", sans-serif;
 }
-nav{
+
+nav {
     width: 100%;
     margin: auto;
     height: 87px;
@@ -11,31 +12,62 @@ nav{
     border: 1px solid #000;
 }
 
-.icon{
+.icon {
     text-decoration: none;
     position: relative;
     left: 33%;
 }
 
-.icon img{
+.icon img {
     border: #000 thin solid;
-    padding:7px;
-    height:30px;
+    padding: 7px;
+    height: 30px;
     background-color: aqua;
     margin: 25px;
-
+    transition-duration: 0.4s;
 }
 
-.icon img:hover{
+.icon img:hover {
     border: #000 thin solid;
-    padding:7px;
-    height:30px;
-    background-color:beige;
-
+    padding: 7px;
+    height: 30px;
+    background-color: beige;
 }
 
-
-.postCard{
+.postCard {
     position: relative;
     top: 100px;
+}
+
+.btn {
+    background-color: aqua;
+    padding: 10px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid black;
+    text-decoration: none;
+    transition-duration: 0.4s;
+}
+
+.btn:hover {
+    background-color: beige;
+    color: black;
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.filename {
+    background-color: beige;
+}
+
+h1 {}
+
+input[type=file] {
+    width: 400px;
+    height: 200px;
 }

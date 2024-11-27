@@ -1,3 +1,6 @@
+<?php
+include 'connectdb.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,40 +20,28 @@
         <a class="icon" href="bookmarked_posts.php">
         <img src="Bookmark.svg">
         </a>
-
-
         <a class="icon" href="delete_profile.php">
         <img src="delete_profile.svg">
         </a>
-
-
             <a class="icon" href="view_profile.php">
             <img src="Account.svg">
             </a>
-
-
             <a class="icon" href="list_posts.php">
             <img src="Search.svg">
             </a>
-
-
             <a class="icon" href="login.php">
             <img src="login.svg">
             </a>
-
-
             <a class="icon" href="signup.php">
             <img src="signup.svg">
             </a>
-
-
             <a class="icon" class="icon" href="index.php">
             <img src="Home.svg">
             </a>
     </nav>
-
-    <h1> <u>Create Post</u></h1>
-
+    
+    <h1><u>Create Post</u></h1>
+    <div class="formcss">
     <form action="add_post_validate.php" method="post" >
     <label for="title">Title: </label><br>
         <input type="text" name="title" id="title" placeholder="New Post Title" size="50">
@@ -58,11 +49,12 @@
         <label for="description_txt">Description: </label><br>
         <textarea name="description" id="description_txt" cols="100" rows="10" placeholder="New Post Description"></textarea><br>
         <label for="post_txt">Content: </label><br>
-        <textarea name="post_txt" id="post_txt" cols="200" rows="30" placeholder="Enter Post Content"></textarea>
+        <textarea name="post_txt" id="post_txt" cols="180" rows="26" placeholder="Enter Post Content"></textarea>
         <br>
-        <button type="submit" onclick ="alert('Thanks for submitting!')>Submit</button>
+        <button type="submit" class="btn" onclick="alert('Thanks for submitting!')">Submit</button>
+        <input type="file" id="pictureup"name="image">
     </form>
-
+    </div>
 
 
 </body>
