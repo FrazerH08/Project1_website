@@ -55,7 +55,7 @@ if($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()){
         echo'<section class="postCard">';
         echo "<h2>" . $row['title'] . "</h2>";
-        echo "<h4>" . $row['description'] . "</h4>";
+        echo "<h3>" . $row['description'] . "</h3>";
         echo "<p>" . $row['post_txt'] . "</p>";
         echo'</section>';
     }
