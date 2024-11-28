@@ -36,6 +36,7 @@
             <img src="Home.svg">
             </a>
     </nav>
+    <h1 class="title">All Posts</h1>
 </body>
 </html>
 <?php

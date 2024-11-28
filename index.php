@@ -60,7 +60,7 @@ include 'connectdb.php';
     <div class="hello-username">
         <p> Hello <?php echo $username ?>, <br>  Welcome Back!</p>
     </div>
-    <a href='#' class="cookiesbutton">
+    <a href='#' onclick="Thanks For accepting cookies" class="cookiesbutton">
         <b>Accept Cookies?</b>
     </a>
     <div class="post-homescreen">
