@@ -1,3 +1,7 @@
+<?php
+include 'connectdb.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,11 +41,38 @@
             </a>
     </nav>
     <h1 class="title">All Posts</h1>
+    <div class="search-button">
+    <form method='POST'>
+    <input type="text" placeholder="Search for a post or author" name="search">
+    <button name="submit">Search</button> "<br>
+    </form>
+    </div>
+    <?php
+    if(isset($_POST['submit'])){
+        $search=$_POST['search'];
+        $sql="SELECT * FROM posts where title ='$search'";
+        $sr_result=mysqli_query($conn,$sql);
+        if($sr_result){
+            if(mysqli_num_rows($sr_result)>0){
+                while($row=myqli_fetch_assoc($sr_result)){
+                    echo '<section class="postCard">';
+                echo '<p><a href="retrieve_post.php?id=' . $row['id'] . '">' . $row['title'] . '</a>:<br>';
+                    if($role == 'admin'){
+                        echo '<a href="edit_post_form.php?id=' . $row['id'] . '">Edit</a> | <a onclick="return confirm(\'Do You Really Want To Delete This?\')" href="delete_post.php?id=' . $row['id'] . '">Delete </a>';
+                    }
+                echo "     Description:   " , $row ['description'] . " </>" , "<br>" ;
+                echo "     Post written:   ", $row['created'] . "</>";
+                echo "</section>";
+            }
+                }
+                
+
+        }
+    }
+    ?>
 </body>
 </html>
 <?php
-
-include 'connectdb.php';
 session_start();
 $_SESSION['user_id'] =1;
 $_SESSION['username'] = 'admin';
@@ -61,7 +92,9 @@ section{
     display:block;
 }
 </style>';
+?>
 
+<?php
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<section class="postCard">';
@@ -69,10 +102,11 @@ if ($result->num_rows > 0) {
             if($role == 'admin'){
                 echo '<a href="edit_post_form.php?id=' . $row['id'] . '">Edit</a> | <a onclick="return confirm(\'Do You Really Want To Delete This?\')" href="delete_post.php?id=' . $row['id'] . '">Delete </a>';
             }
-        echo "     Description:   " , $row ['description'] . " </>" , "<br>" ; 
+        echo "     Description:   " , $row ['description'] . " </>" , "<br>" ;
         echo "     Post written:   ", $row['created'] . "</>";
         echo "</section>";
     }
 } else {
     echo "Sorry 0 Results Returned";
 }
+?>

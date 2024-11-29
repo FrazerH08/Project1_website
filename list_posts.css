@@ -39,3 +39,42 @@ nav {
 .title {
     text-align: center;
 }
+
+
+input{
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+    padding: 10px;
+    background: transparent;
+    color: black;
+    font-size: 17px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+form button {
+    background:aqua;
+    float: left;
+    width: 10%;
+    padding: 10px;
+    color: black;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+
+}
+form button:hover {
+    background:beige;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.search-button{
+    top: 100px;
+    text-decoration: none;
+}

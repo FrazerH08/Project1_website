@@ -86,12 +86,12 @@ if (strlen($password) < 8) {
             echo "<h1>Email is already taken, please change email</h1><br>";
             echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button></a>";
         } else {
-            // Hash the password , incase it gets hacked, based on testscript file 
+            // Hash the password , incase it gets hacked, based on testscript file
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // Insert new user into db 
-            $insert_stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-            $insert_stmt->bind_param("sss", $username, $email, $hashed_password);
+            $insert_stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?,?)");
+            $insert_stmt->bind_param("sss", $username, $email, $hashed_password,$password);
 
             if($insert_stmt->execute()){
                 echo "<h1>Registration was successful</h1><br>";
