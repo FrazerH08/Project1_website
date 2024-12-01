@@ -1,8 +1,6 @@
 body {
     background-color: #F8F3F3;
     font-family: "Inter", sans-serif;
-    font-size: 30px;
-    text-align: center;
 }
 
 .Header {}
@@ -35,4 +33,17 @@ nav {
     padding: 7px;
     height: 30px;
     background-color: beige;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-align: center;
+    font-size: 30px;
+}
+
+h3 {
+    text-align: center;
 }

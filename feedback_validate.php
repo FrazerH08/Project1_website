@@ -64,8 +64,8 @@ if($stmt){
     $stmt->bind_param("ssssss", $sanitisedfirstname, $sanitisedlastname, $sanitisedusername, $sanitisedemail, $sanitisedcountry, $sanitisedsubject);
 }
 if($stmt->execute()) {
-    echo "<h3> Feedback Submitted! </h3>";
-    echo "<a href='index.php'> <br> Back to Home</a>";
+    echo "<h1> Feedback Submitted! We will email you with the email you provided if we have any updates! </h1>";
+    echo "<h1> <a href='index.php'> <br> Back to Home</a> </h1>";
 } else{
     echo  "Error: " . $sql ."<br>" . $conn->error;
 }

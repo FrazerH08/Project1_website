@@ -1,3 +1,4 @@
+
 <?php
 include 'connectdb.php';
 ?>
@@ -45,7 +46,7 @@ include 'connectdb.php';
     
     <h1><u>Create Post</u></h1>
     <div class="formcss">
-    <form action="add_post_validate.php" method="post" >
+    <form action="add_post_validate.php" method="post" enctype="multipart/form-data">
     <label for="title">Title: </label><br>
         <input type="text" name="title" id="title" placeholder="New Post Title" size="50" required>
         <br>
@@ -55,7 +56,7 @@ include 'connectdb.php';
         <textarea name="post_txt" id="post_txt" cols="180" rows="26" placeholder="Enter Post Content" required></textarea>
         <br>
         <button type="submit" class="btn" onclick="alert('Thanks for submitting!')">Submit</button>
-        <input type="file" id="pictureup"name="image">
+        <input type="file" id="pictureup" name="fileToUpload">
     </form>
     </div>
 

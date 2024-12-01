@@ -62,7 +62,7 @@
         </nav>
 
     </nav>
-    <form action="edit_post_validate.php" method="post">
+    <form action="edit_post_validate.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $id;?>">
         <label for="title">Title: </label><br>
         <input type="text" name="title" id="title" value="<?php echo $title;?>" size="34">
@@ -73,7 +73,7 @@
         <textarea name="post_txt" id="post_txt" cols="180" rows="26"><?php echo $post_txt; ?></textarea>
         <br>
         <button type="submit" class="btn" onclick="alert('Thanks for submitting!')">Submit</button>
-        <input type="file" id="pictureup"name="image">
+        <input type="file" id="pictureup"name="fileToUpload">
     </form>
 </body>
 </html>

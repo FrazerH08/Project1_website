@@ -20,7 +20,7 @@ $username = $_SESSION['username'] ?? 'Guest';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="welcome.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -51,8 +51,14 @@ $username = $_SESSION['username'] ?? 'Guest';
             <a class="icon" href="delete_profile.php">
         <img src="delete_profile.svg">
         </a>
-
-    </nav>
+        <a class="icon" href="feedback.php">
+        <img src="feedback.svg">
+        </a>
+        </nav>
+    <div class="welcome-text">
     <h1>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome back to the blogsite!</h1>
+    <h2> Look at the header for places to go! </h2>
+    <p> If you need any help with understanding the icons Click <a href="icons.html">Here</a></p> 
+    </div>
 </body>
 </html>

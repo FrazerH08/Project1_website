@@ -55,7 +55,7 @@ session_start();
       <br> <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
         </label>
         <div class="next">
-            <button type="submit" name= "submit" value="submit" class="signupbtn" >login</button>
+            <button type="submit" name= "submit" value="submit" class="signupbtn" >Login</button>
         </div>
         <p> Need to sign up? <a href="signup.php"> Register now</a></p>
     </form>

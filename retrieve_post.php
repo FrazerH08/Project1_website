@@ -39,29 +39,52 @@
         <img src="feedback.svg">
         </a>
         </nav>
-</body>
-</html>
-<?php
-
-include 'connectdb.php';
+        <div class="post">
+        <?php
+        include 'connectdb.php';
 
 $post_id = $_GET['id'];
-//echo $post_id 
 
-$sql = "SELECT title, description, post_txt  FROM posts WHERE id = '$post_id'";
-
-$result = $conn->query(query:$sql);
-
-
+$sql = "SELECT title, description, post_txt, picture FROM posts WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $post_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()){
-        echo'<section class="postCard">';
-        echo "<h2>" . $row['title'] . "</h2>";
-        echo "<h3>" . $row['description'] . "</h3>";
-        echo "<p>" . $row['post_txt'] . "</p>";
-        echo'</section>';
+        if (!empty($row['picture'])) {
+            // If it's a file path
+            if (file_exists($row['picture'])) {
+                echo "<img src='" . htmlspecialchars($row['picture']) . "' alt='Post Image'>";
+            } 
+            // If it's base64 encoded
+            else if (strpos($row['picture'], 'base64') !== false) {
+                echo "<img src='" . $row['picture'] . "' alt='Post Image'>";
+            }
+            // If it's binary data
+            else {
+                echo "<img src='data:image/jpeg;base64," . base64_encode($row['picture']) . "' alt='Post Image'>";
+            }
+        }
+        echo '<section class="postCard">';
+        echo "<h2>" . htmlspecialchars($row['title']) . "</h2>";
+        echo "<h3>" . htmlspecialchars($row['description']) . "</h3>";
+        echo "<p>" . htmlspecialchars($row['post_txt']) . "</p>";
+        
+        // Check if picture exists and is not null
+        
+        
+        echo '</section>';
     }
-}else {
-    echo"Sorry 0 Results Returned";
+} else {
+    echo "Sorry, 0 Results Returned";
 }
+
+$stmt->close();
+$conn->close();
+?>
+</div>
+</body>
+</html>
+<?php

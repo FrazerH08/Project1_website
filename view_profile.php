@@ -54,7 +54,7 @@ $username = $_SESSION['username'] ?? 'Guest';
 
     </nav>
     <?php 
-    echo "Hello! {$username} How are you today? This page is coming soon sadly ";
+    echo "<h1> Hello! {$username} How are you today? This page is coming soon sadly </h1> ";
     ?>
 </body>
 </html>
