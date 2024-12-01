@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+// Check if username is set in session
+if (!isset($_SESSION['username'])) {
+    echo "No username in session. Please log in.";
+    header("Location: login.php");
+    exit();
+}
+
+// Get username from session, with additional safety
+$username = $_SESSION['username'] ?? 'Guest';
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +27,20 @@
 </head>
 <body>
 <nav class="Header">
+        <a class="icon" class="icon" href="index.php">
+            <img src="Home.svg">
+            </a>
             <a class="icon" href="new_post_form.php">
             <img src="create_post.svg">
             </a>
+            <a class="icon" href="list_posts.php">
+            <img src="Search.svg">
         <a class="icon" href="bookmarked_posts.php">
         <img src="Bookmark.svg">
-        </a>
-        <a class="icon" href="delete_profile.php">
-        <img src="delete_profile.svg">
         </a>
             <a class="icon" href="view_profile.php">
             <img src="Account.svg">
             </a>
-            <a class="icon" href="list_posts.php">
-            <img src="Search.svg">
             </a>
             <a class="icon" href="login.php">
             <img src="login.svg">
@@ -32,13 +48,11 @@
             <a class="icon" href="signup.php">
             <img src="signup.svg">
             </a>
-            <a class="icon" class="icon" href="index.php">
-            <img src="Home.svg">
-            </a>
+            <a class="icon" href="delete_profile.php">
+        <img src="delete_profile.svg">
+        </a>
+
     </nav>
-    <?php
-    include 'login_validation.php';
-    echo" <h1> Hello {$username} Nice To see you login <br> Welcome Back to the blogsite , look at the header for places to go to! <br> Enjoy!";
-    ?>
+    <h1>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome back to the blogsite!</h1>
 </body>
 </html>

@@ -1,6 +1,16 @@
 <?php
 include 'connectdb.php';
+include 'account_display.php';
+
+
+// Get username from session, with additional safety
+$username = $_SESSION['username'] ?? 'Guest';
+
+// Debugging
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,48 +27,39 @@ include 'connectdb.php';
     <link href="index.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="Header">
+<nav class="Header">
+        <a class="icon" class="icon" href="index.php">
+            <img src="Home.svg">
+            </a>
             <a class="icon" href="new_post_form.php">
             <img src="create_post.svg">
             </a>
+            <a class="icon" href="list_posts.php">
+            <img src="Search.svg">
         <a class="icon" href="bookmarked_posts.php">
         <img src="Bookmark.svg">
         </a>
-
-
-        <a class="icon" href="delete_profile.php">
-        <img src="delete_profile.svg">
-        </a>
-
-
             <a class="icon" href="view_profile.php">
             <img src="Account.svg">
             </a>
-
-
-            <a class="icon" href="list_posts.php">
-            <img src="Search.svg">
             </a>
-
-
             <a class="icon" href="login.php">
             <img src="login.svg">
             </a>
-
-
             <a class="icon" href="signup.php">
             <img src="signup.svg">
             </a>
-
-
-            <a class="icon" class="icon" href="index.php">
-            <img src="Home.svg">
-            </a>
-    </nav>
+            <a class="icon" href="delete_profile.php">
+        <img src="delete_profile.svg">
+        </a>
+        <a class="icon" href="feedback.php">
+        <img src="feedback.svg">
+        </a>
+        </nav>
     <div class="Homepagetxt"> <h1> <u><b>Homepage</b></u> </h1>
     </div>
     <div class="hello-username">
-        <p> Hello <?php echo $username ?>, <br>  Welcome Back!</p>
+        <p> Hello <?php  echo $username ?>, <br>  Welcome Back!</p>
     </div>
     <a href='#' onclick="Thanks For accepting cookies" class="cookiesbutton">
         <b>Accept Cookies?</b>

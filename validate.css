@@ -5,11 +5,9 @@ body {
     text-align: center;
 }
 
-.Header{
+.Header {}
 
-}
-
-nav{
+nav {
     width: 100%;
     margin: auto;
     height: 87px;
@@ -18,26 +16,23 @@ nav{
     border: 1px solid #000;
 }
 
-.icon{
+.icon {
     text-decoration: none;
     position: relative;
     left: 33%;
 }
 
-.icon img{
+.icon img {
     border: #000 thin solid;
-    padding:7px;
-    height:30px;
+    padding: 7px;
+    height: 30px;
     background-color: aqua;
     margin: 25px;
-
 }
 
-.icon img:hover{
+.icon img:hover {
     border: #000 thin solid;
-    padding:7px;
-    height:30px;
-    background-color:beige;
-
+    padding: 7px;
+    height: 30px;
+    background-color: beige;
 }
-

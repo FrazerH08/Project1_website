@@ -10,6 +10,10 @@ if(!isset($_POST['submit'])){
 $username = trim($_POST['username']);
 $email = trim($_POST['email']);
 $password = $_POST['password'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$birthdate = $_POST['birthdate'];
+$region = $_POST['region'];
 
 // email check
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -42,27 +46,27 @@ if (strlen($password) < 8) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account validation</title>
-    <link rel="stylesheet" href="accvalid.css"
+    <link rel="stylesheet" href="accvalid.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 <nav class="Header">
+        <a class="icon" class="icon" href="index.php">
+            <img src="Home.svg">
+            </a>
             <a class="icon" href="new_post_form.php">
             <img src="create_post.svg">
             </a>
+            <a class="icon" href="list_posts.php">
+            <img src="Search.svg">
         <a class="icon" href="bookmarked_posts.php">
         <img src="Bookmark.svg">
-        </a>
-        <a class="icon" href="delete_profile.php">
-        <img src="delete_profile.svg">
         </a>
             <a class="icon" href="view_profile.php">
             <img src="Account.svg">
             </a>
-            <a class="icon" href="list_posts.php">
-            <img src="Search.svg">
             </a>
             <a class="icon" href="login.php">
             <img src="login.svg">
@@ -70,10 +74,13 @@ if (strlen($password) < 8) {
             <a class="icon" href="signup.php">
             <img src="signup.svg">
             </a>
-            <a class="icon" class="icon" href="index.php">
-            <img src="Home.svg">
-            </a>
-    </nav>
+            <a class="icon" href="delete_profile.php">
+        <img src="delete_profile.svg">
+        </a>
+        <a class="icon" href="feedback.php">
+        <img src="feedback.svg">
+        </a>
+        </nav>
     <div class="validation-container">
         <?php
         // Check if email already exists
@@ -90,9 +97,9 @@ if (strlen($password) < 8) {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // Insert new user into db 
-            $insert_stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?,?)");
-            $insert_stmt->bind_param("sss", $username, $email, $hashed_password,$password);
-
+            $insert_stmt = $conn->prepare("INSERT INTO users (username, email, password, firstname, lastname, birthdate, region ) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $insert_stmt->bind_param("sssssss", $username, $email, $hashed_password, $firstname, $lastname, $birthdate, $region );
+  
             if($insert_stmt->execute()){
                 echo "<h1>Registration was successful</h1><br>";
                 echo "<a href='login.php'><button class='btn'>Login</button></a>";

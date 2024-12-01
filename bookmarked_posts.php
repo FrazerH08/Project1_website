@@ -1,7 +1,6 @@
 <?php
-session_start();
 include 'connectdb.php';
-
+include 'account_display.php';
 $logged_in = $_SESSION['logged_in'] ?? false;
 $role = $_SESSION['role'] ?? '';
 
@@ -32,18 +31,25 @@ if (empty($posts)) {
         $posts[] = $row;
     }
 }
-?>
 
+
+// Get username from session, with additional safety
+$username = $_SESSION['username'] ?? 'Guest';
+
+// Debugging
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Posts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming soon!</title>
+    <link rel="stylesheet" href="list_posts.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="list_posts.css" rel="stylesheet">
-
 </head>
 <body>
 <nav class="Header">
@@ -75,9 +81,12 @@ if (empty($posts)) {
         <img src="feedback.svg">
         </a>
         </nav>
+    <?php 
+    echo "Hello! {$username} How are you today? This page is coming soon sadly ";
+    ?>
     <h1 class="title"><b><u>All Posts</u></b></h1>
     <div class="refresh">
-        <button> <a href="list_posts.php"> Click here to refresh posts</a></button>
+        <button> <a href="bookmarked_posts.php"> Click here to refresh posts</a></button>
     </div> 
     <div class="search-button">
         <form method='POST'>
@@ -110,5 +119,6 @@ if (empty($posts)) {
         }
         ?>
     </div>
+
 </body>
 </html>

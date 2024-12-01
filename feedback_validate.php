@@ -1,34 +1,13 @@
-<?php
-
-    include 'connectdb.php';
-    $id = $_GET['id'];
-
-    $SQL = "SELECT title, description, post_txt FROM posts WHERE id = $id";
-
-    $result= $conn->query($SQL);
-
-    $row = $result->fetch_assoc();
-
-    if($result->num_rows == 0) {
-        echo "No Post Found!";
-    }else{
-        $title = $row['title'];
-        $description = $row['description'];
-        $post_txt = htmlentities($row['post_txt']);
-    }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Post</title>
+    <title>Validating post</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="new_post.css" rel="stylesheet">
+    <link href="validate.css" rel="stylesheet">
 </head>
 <body>
 <nav class="Header">
@@ -60,20 +39,36 @@
         <img src="feedback.svg">
         </a>
         </nav>
+    <?php
 
-    </nav>
-    <form action="edit_post_validate.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $id;?>">
-        <label for="title">Title: </label><br>
-        <input type="text" name="title" id="title" value="<?php echo $title;?>" size="34">
-        <br>
-        <label for="description_txt">Description: </label><br>
-        <textarea name="description" id="description_txt" cols="100" rows="10"><?php echo $description; ?></textarea><br>
-        <label for="post_txt">Content: </label><br>
-        <textarea name="post_txt" id="post_txt" cols="180" rows="26"><?php echo $post_txt; ?></textarea>
-        <br>
-        <button type="submit" class="btn" onclick="alert('Thanks for submitting!')">Submit</button>
-        <input type="file" id="pictureup"name="image">
-    </form>
+include 'connectdb.php';
+$firstname = $_POST['firstname'];
+$lastname =$_POST['lastname'];
+$username = $_POST['username'];
+$email = $_POST['email'];
+$country = $_POST['country'];
+$subject = $_POST['subject'];
+
+$sanitisedfirstname =htmlentities(string: $firstname);
+$sanitisedlastname = htmlentities(string: $lastname);
+$sanitisedusername = htmlentities(string: $username);
+$sanitisedemail =    htmlentities(string: $email);
+$sanitisedcountry = htmlentities(string: $country);
+$sanitisedsubject = htmlentities(string: $subject);
+
+$sql ="INSERT INTO feedback (firstname, lastname, username, email, country, subject) VALUES (?, ?, ?, ?, ?, ?)";
+
+$stmt = $conn->prepare($sql);
+
+if($stmt){
+    $stmt->bind_param("ssssss", $sanitisedfirstname, $sanitisedlastname, $sanitisedusername, $sanitisedemail, $sanitisedcountry, $sanitisedsubject);
+}
+if($stmt->execute()) {
+    echo "<h3> Feedback Submitted! </h3>";
+    echo "<a href='index.php'> <br> Back to Home</a>";
+} else{
+    echo  "Error: " . $sql ."<br>" . $conn->error;
+}
+?>
 </body>
 </html>

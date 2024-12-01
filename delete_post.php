@@ -16,20 +16,20 @@ session_start();
 </head>
 <body>
 <nav class="Header">
+        <a class="icon" class="icon" href="index.php">
+            <img src="Home.svg">
+            </a>
             <a class="icon" href="new_post_form.php">
             <img src="create_post.svg">
             </a>
+            <a class="icon" href="list_posts.php">
+            <img src="Search.svg">
         <a class="icon" href="bookmarked_posts.php">
         <img src="Bookmark.svg">
-        </a>
-        <a class="icon" href="delete_profile.php">
-        <img src="delete_profile.svg">
         </a>
             <a class="icon" href="view_profile.php">
             <img src="Account.svg">
             </a>
-            <a class="icon" href="list_posts.php">
-            <img src="Search.svg">
             </a>
             <a class="icon" href="login.php">
             <img src="login.svg">
@@ -37,10 +37,13 @@ session_start();
             <a class="icon" href="signup.php">
             <img src="signup.svg">
             </a>
-            <a class="icon" class="icon" href="index.php">
-            <img src="Home.svg">
-            </a>
-    </nav>
+            <a class="icon" href="delete_profile.php">
+        <img src="delete_profile.svg">
+        </a>
+        <a class="icon" href="feedback.php">
+        <img src="feedback.svg">
+        </a>
+        </nav>
 </body>
 </html>
 <?php

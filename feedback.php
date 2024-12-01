@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="validate.css"
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback</title>
+    <link rel="stylesheet" href="feedback.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <title>Post Validating</title>
 </head>
 <body>
 <nav class="Header">
@@ -39,25 +38,36 @@
         <img src="feedback.svg">
         </a>
         </nav>
-<?php
+<h1><u>Feedback Form</u></h1>
 
-include 'connectdb.php';
+<div class="container">
+  <form action="feedback_validate.php" method="post">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-$id = $_POST['id'];
-$title = $_POST['title'];
-$description = $_POST['description'];
-$post_text = $_POST['post_txt'];
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-$sanitisedTitle= htmlentities(string:$title);
-$sanitisedDescription= htmlentities(string: $description);
-$sanitisedPost= htmlentities(string: $post_text);
+    <label for="username">Username</label>
+    <input type="text" id="usrname" name="username" placeholder="Your username..">
 
-$sql = "UPDATE posts SET title='$sanitisedTitle', description='$sanitisedDescription', post_txt='$sanitisedPost' WHERE id = $id";
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="Your email..">
 
-if ($conn->query(query: $sql) === TRUE) {
-    echo "New record created successfully<br>";
-    echo "<a href='list_posts.php'>Back to Posts</a>";
-} else{
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-?>
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="Australia">Australia</option>
+      <option value="Canada">Canada</option>
+      <option value="USA">USA</option>
+      <option value="United Kingdom">United Kingdom</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

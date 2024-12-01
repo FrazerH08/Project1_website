@@ -12,21 +12,20 @@
 </head>
 <body>
 <nav class="Header">
-
+        <a class="icon" class="icon" href="index.php">
+            <img src="Home.svg">
+            </a>
             <a class="icon" href="new_post_form.php">
             <img src="create_post.svg">
             </a>
+            <a class="icon" href="list_posts.php">
+            <img src="Search.svg">
         <a class="icon" href="bookmarked_posts.php">
         <img src="Bookmark.svg">
-        </a>
-        <a class="icon" href="delete_profile.php">
-        <img src="delete_profile.svg">
         </a>
             <a class="icon" href="view_profile.php">
             <img src="Account.svg">
             </a>
-            <a class="icon" href="list_posts.php">
-            <img src="Search.svg">
             </a>
             <a class="icon" href="login.php">
             <img src="login.svg">
@@ -34,14 +33,37 @@
             <a class="icon" href="signup.php">
             <img src="signup.svg">
             </a>
-            <a class="icon" class="icon" href="index.php">
-            <img src="Home.svg">
-            </a>
-    </nav>
+            <a class="icon" href="delete_profile.php">
+        <img src="delete_profile.svg">
+        </a>
+        <a class="icon" href="feedback.php">
+        <img src="feedback.svg">
+        </a>
+        </nav>
     <div class="title"> <h1> Signup Page</h1>
     </div>
     <form action="accountvalidation.php" method='POST'>
-        <p> Please fill out this form to sign up 1/2</p>
+        <p> Please fill out this form to sign up </p>
+
+        <label for="firstname"><b>First name:</b></label>
+        <input type="text" placeholder="Enter First Name"name="firstname"required> <br>
+        <br>
+
+        <label for="lastname"><b>Lastname:</b></label>
+        <input type="text" placeholder="Enter last Name"name="lastname"required> <br>
+        <br>
+        <label for="dob"><b>Date of birth:</b></label>
+        <input type="date" id="birthdate"name="birthdate"> <br>
+        <br>
+        <label for="region"><b>Region:</b></label> 
+        <select id="region" name="region"> 
+        <option value="Australia">Australia</option>
+        <option value="Canada">Canada</option>
+        <option value="USA">USA</option>
+        <option value="United Kingdom">United Kingdom</option>
+        </select>
+        <br>
+        <br>
         <label for="email"><b>Email:</b></label> <br>
         <input type="text" placeholder="Enter Email" name="email" required> <br>
         <br> <label for="username"><b>Username:</b></label> <br>
@@ -52,10 +74,11 @@
         <label>
       <br> <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
         </label>
+
         <div class="next">
             <button type="submit" name= "submit" value="submit" class="signupbtn" >Next</button>
         </div>
-        <p> Already have an account? <a href="login.php"> sign in now</a></p>
+        <p> Already have an account? <a href="login.php"> Sign in now</a></p>
     </form>
 </body>
 </html>

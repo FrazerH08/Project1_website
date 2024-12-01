@@ -40,8 +40,17 @@ nav {
     text-align: center;
 }
 
+.refresh button {
+    border: #000 thin solid;
+    padding: 20px 24px;
+    background-color: aqua;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+}
 
-input{
+input {
     box-sizing: border-box;
     float: left;
     width: 25%;
@@ -54,7 +63,7 @@ input{
 }
 
 form button {
-    background:aqua;
+    background: aqua;
     float: left;
     width: 10%;
     padding: 10px;
@@ -63,10 +72,10 @@ form button {
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
-
 }
+
 form button:hover {
-    background:beige;
+    background: beige;
     transition: 0.4s;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
@@ -74,7 +83,13 @@ form button:hover {
     -o-transition: 0.4s;
 }
 
-.search-button{
-    top: 100px;
+.search-button {
     text-decoration: none;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+
+section.postCard {
+    background-color: lightblue;
+    display: block;
 }
