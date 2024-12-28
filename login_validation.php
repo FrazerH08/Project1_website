@@ -23,8 +23,10 @@ if(isset($_POST['submit'])){
         // Regenerate session ID for security
         session_regenerate_id(true);
         
-        // Store username in session
+        // Store username and role in session
         $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role'];
+        $_SESSION['logged_in']= true;
         
         // Add debugging
         echo "Debug - Session username set: " . $_SESSION['username'];

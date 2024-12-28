@@ -5,7 +5,7 @@ include 'account_display.php';
 
 // Get username from session, with additional safety
 $username = $_SESSION['username'] ?? 'Guest';
-
+$role = $_SESSION['role'];
 // Debugging
 
 
@@ -15,7 +15,7 @@ $username = $_SESSION['username'] ?? 'Guest';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming soon!</title>
+    <title>View profile</title>
     <link rel="stylesheet" href="header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,6 +55,7 @@ $username = $_SESSION['username'] ?? 'Guest';
     </nav>
     <?php 
     echo "<h1> Hello! {$username} How are you today? This page is coming soon sadly </h1> ";
+    echo "<h3> You are a {$role}, <br> if you are an admin, you will be able to edit and delete posts. </h3> ";
     ?>
 </body>
 </html>

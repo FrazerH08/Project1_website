@@ -94,7 +94,7 @@ if (empty($posts)) {
                 echo '<section class="postCard">';
                 echo '<p><a href="retrieve_post.php?id=' . htmlspecialchars($row['id']) . '">' . '<br>', htmlspecialchars($row['title']) . '</a></p>';
                 
-                if($role == 'admin'){
+                if($role === 'admin'){
                     echo '<p>
                         <a href="edit_post_form.php?id=' . htmlspecialchars($row['id']) . '">Edit</a> | 
                         <a onclick="return confirm(\'Do You Really Want To Delete This?\')" href="delete_post.php?id=' . htmlspecialchars($row['id']) . '">Delete</a>
